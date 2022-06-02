@@ -1,30 +1,30 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.querySelector('#nav-menu'),
-      navToggle = document.querySelector('#nav-toggle'),
-      navClose = document.querySelector('#nav-close');
+const navMenu = document.querySelector("#nav-menu"),
+  navToggle = document.querySelector("#nav-toggle"),
+  navClose = document.querySelector("#nav-close");
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
-if(navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu')
-    })
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add("show-menu");
+  });
 }
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
-if(navClose) {
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
+if (navClose) {
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show-menu");
+  });
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link');
+const navLink = document.querySelectorAll(".nav__link");
 
-function linkAction(){
-    const navMenu = document.querySelector('#nav-menu');
-    //when we click nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
+function linkAction() {
+  const navMenu = document.querySelector("#nav-menu");
+  //when we click nav__link, we remove the show-menu class
+  navMenu.classList.remove("show-menu");
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLink.forEach((n) => n.addEventListener("click", linkAction));
