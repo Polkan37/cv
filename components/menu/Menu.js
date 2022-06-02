@@ -27,4 +27,5 @@ function linkAction() {
   //when we click nav__link, we remove the show-menu class
   navMenu.classList.remove("show-menu");
 }
+
 navLink.forEach((n) => n.addEventListener("click", linkAction));

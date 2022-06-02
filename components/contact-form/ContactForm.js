@@ -31,11 +31,12 @@ function inputCheck(el) {
     el.style.border = "1px solid rgb(0, 196, 0)";
     el.setAttribute("is-valid", "1");
     button.classList.remove("invalid-input");
-  } else {
-    el.style.border = "1px solid rgb(255, 0, 0)";
-    el.setAttribute("is-valid", "0");
-    button.classList.add("invalid-input");
+    return;
   }
+
+  el.style.border = "1px solid rgb(255, 0, 0)";
+  el.setAttribute("is-valid", "0");
+  button.classList.add("invalid-input");
 }
 
 function buttonHandler(e) {
@@ -43,6 +44,8 @@ function buttonHandler(e) {
   validInputArr.forEach((el) => {
     isAllValid.push(el.getAttribute("is-valid"));
   });
+
+  //TODO probably should be used && instead of &
   const isValid = isAllValid.reduce((acc, current) => {
     return acc & current;
   });
@@ -51,41 +54,42 @@ function buttonHandler(e) {
     //block sending button
     e.preventDefault();
     button.classList.add("invalid-input");
-  } else {
-    const TOKEN = "5334344703:AAFkugs2Xrj_gFiqzsbUrKJD9Qkt28CHZA8";
-    const CHAT_ID = "-1001582276476";
-    const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
-    form.addEventListener("submit", function (e) {
-      let message = `&#9989; <i>Заявка с сайта!</i>\n`;
-      message += "<b>Отправитель: </b>" + inputArr[0].value + "\n";
-      message += "<b>Почта: </b>" + inputArr[1].value + "\n";
-      message += "<b>сообщение: </b>" + inputArr[2].value + "\n";
-
-      axios
-        .post(URL_API, {
-          chat_id: CHAT_ID,
-          parse_mode: "html",
-          text: message,
-        })
-        .then((res) => {
-          //form reset
-          sent.classList.add("contact__done");
-          form.reset();
-          setTimeout(() => {
-            sent.classList.remove("contact__done");
-          }, 2000);
-          const reset = inputArr.forEach((el) => {
-            el.style.border = "none";
-          });
-        })
-        .catch((err) => {
-          console.warn(err);
-        })
-        .finally(() => {
-          console.log("sent");
-        });
-      e.preventDefault();
-    });
+    return;
   }
+  const TOKEN = "5334344703:AAFkugs2Xrj_gFiqzsbUrKJD9Qkt28CHZA8";
+  const CHAT_ID = "-1001582276476";
+  const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+  form.addEventListener("submit", function (e) {
+    let message = `&#9989; <i>Заявка с сайта!</i>\n`;
+    message += "<b>Отправитель: </b>" + inputArr[0].value + "\n";
+    message += "<b>Почта: </b>" + inputArr[1].value + "\n";
+    message += "<b>сообщение: </b>" + inputArr[2].value + "\n";
+
+    // where it's defined?
+    axios
+      .post(URL_API, {
+        chat_id: CHAT_ID,
+        parse_mode: "html",
+        text: message,
+      })
+      .then(() => {
+        //form reset
+        sent.classList.add("contact__done");
+        form.reset();
+        setTimeout(() => {
+          sent.classList.remove("contact__done");
+        }, 2000);
+        const reset = inputArr.forEach((el) => {
+          el.style.border = "none";
+        });
+      })
+      .catch((err) => {
+        console.warn(err);
+      })
+      .finally(() => {
+        console.log("sent");
+      });
+    e.preventDefault();
+  });
 }

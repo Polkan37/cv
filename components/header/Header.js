@@ -2,8 +2,10 @@
 function scrollHeader() {
   const nav = document.getElementById("header");
   // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-  if (this.scrollY >= 80) nav.classList.add("scroll-header");
-  else nav.classList.remove("scroll-header");
+  if (this.scrollY >= 80) {
+    return nav.classList.add("scroll-header");
+  }
+  nav.classList.remove("scroll-header");
 }
 window.addEventListener("scroll", scrollHeader);
 
@@ -22,11 +24,11 @@ function scrollActive() {
       document
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
         .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
+      return;
     }
+    document
+      .querySelector(".nav__menu a[href*=" + sectionId + "]")
+      .classList.remove("active-link");
   });
 }
 window.addEventListener("scroll", scrollActive);
@@ -35,7 +37,10 @@ window.addEventListener("scroll", scrollActive);
 function scrollUp() {
   const scrollUp = document.getElementById("scroll-up");
 
-  if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
+  if (this.scrollY >= 560) {
+    scrollUp.classList.add("show-scroll");
+    return;
+  }
+  scrollUp.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollUp);

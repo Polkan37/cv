@@ -1,5 +1,5 @@
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper(".portfolio__container", {
+const swiper = new Swiper(".portfolio__container", {
   cssMode: true,
   loop: true,
   navigation: {
