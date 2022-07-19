@@ -505,6 +505,12 @@ img {
 .qualification__button.qualification__active {
   color: var(--first-color);
 }
+cert-icon {
+  color: var(--first-color);
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0 10px;
+}
 /*==================== SERVICES ====================*/
 .services__conteiner {
   gap: 1.5rem;
@@ -952,7 +958,7 @@ img {
     margin: 0 var(--mb-1);
   }
   .qualification__sections {
-    grid-template-columns: 0.5fr;
+    grid-template-columns: 0.7fr;
   }
   .services__container {
     grid-template-columns: repeat(3, 218px);
