@@ -294,7 +294,7 @@ img {
   font-size: var(--h3-font-size);
   color: var(--text-color);
   font-weight: var(--font-medium);
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: var(--mb-2);
 }
 .home__description {
   margin-bottom: var(--mb-2);
@@ -361,12 +361,13 @@ img {
   width: 200px;
   border-radius: 0.5rem;
   justify-self: center;
-  align-self: center;
+  align-self: flex-start;
+  margin-top: 1.5rem;
   box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.1);
 }
 .about__description {
-  text-align: center;
-  margin: var(--mb-1-5) auto;
+  text-align: left;
+  margin: 0 auto var(--mb-1-5);
 }
 .about__info {
   display: flex;
@@ -860,12 +861,14 @@ cert-icon {
     order: 1;
     justify-self: center;
   }
-  .about__container,
   .skills__container,
   .portfolio__content,
   .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .about__container{
+    grid-template-columns: 35% 60%;
   }
   .qualification__sections {
     display: grid;
