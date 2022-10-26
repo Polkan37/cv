@@ -393,8 +393,14 @@ img {
 }
 
 /*==================== SKILLS ====================*/
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .skills__container {
-  row-gap: 0;
+  max-width: 320px;
 }
 .skills__header {
   display: flex;
@@ -734,6 +740,7 @@ cert-icon {
 }
 .footer__container {
   row-gap: 3.5rem;
+  text-align: center;
 }
 .footer__bg {
   background-color: var(--first-color-second);
@@ -765,7 +772,6 @@ cert-icon {
   font-size: var(--smaller-font-size);
   text-align: center;
   color: var(--text-color-light);
-  margin-right: var(--mb-3);
 }
 .footer__title,
 .footer__subtitle,
@@ -861,7 +867,6 @@ cert-icon {
     order: 1;
     justify-self: center;
   }
-  .skills__container,
   .portfolio__content,
   .contact__container,
   .footer__container {

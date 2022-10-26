@@ -18,7 +18,6 @@ if (navClose) {
     navMenu.classList.remove("show-menu");
   });
 }
-
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll(".nav__link");
 
@@ -198,6 +197,7 @@ inputArr.forEach((el) => {
 });
 
 form.addEventListener("input", inputHandler);
+form.addEventListener("change", inputHandler);
 button.addEventListener("click", buttonHandler);
 
 function inputHandler({ target }) {
@@ -214,7 +214,15 @@ function inputCheck(el) {
   if (reg.test(inputValue)) {
     el.style.border = "1px solid rgb(0, 196, 0)";
     el.setAttribute("is-valid", "1");
-    button.classList.remove("invalid-input");
+
+    let isAllValid = [];
+    validInputArr.forEach((el) => {
+      isAllValid.push(el.getAttribute("is-valid"));
+    });
+    let isValid = isAllValid.reduce((acc, current) => {
+      return acc & current;
+    });
+    if(isValid) button.classList.remove("invalid-input");
   } else {
     el.style.border = "1px solid rgb(255, 0, 0)";
     el.setAttribute("is-valid", "0");
@@ -223,11 +231,12 @@ function inputCheck(el) {
 }
 
 function buttonHandler(e) {
-  const isAllValid = [];
+  let isAllValid = [];
+  let isValid;
   validInputArr.forEach((el) => {
     isAllValid.push(el.getAttribute("is-valid"));
   });
-  const isValid = isAllValid.reduce((acc, current) => {
+  isValid = isAllValid.reduce((acc, current) => {
     return acc & current;
   });
 
