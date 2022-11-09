@@ -185,7 +185,9 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-.nav__logo,
+.nav__logo{
+  color: var(--first-color);
+}
 .nav__toggle {
   color: var(--title-color);
   font-weight: var(--font-medium);

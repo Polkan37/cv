@@ -13,14 +13,28 @@
   <!--==================== CSS ====================-->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <title>My Portfolio Website</title>
+  <title>Margo Portfolio Website</title>
+  <meta name="description"
+    content="Frontend Developer website. 100% satisfaction guarantee! I'm making responsive layouts html5/css3/js, React js.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://frontend-cv.com/">
+  <meta name="theme-color" content="#58b2df">
+  <meta property="og:title" content="I'm Junior Frontend Developer">
+  <meta property="og:description" content="I'm making responsive layouts html5/css3/js, React js.">
+  <meta property="og:image" content="./assets/img/logo.png">
+  <meta property="og:image:secure_url" content="./assets/img/logo.png">
+
+  
+  <link rel="icon" type="image/png" href="./assets/img/logo.png" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
 </head>
 
 <body>
   <!--==================== HEADER ====================-->
   <header class="header" id="header">
     <nav class="nav container">
-      <a href="#home">
+      <a class="nav__logo" href="#home">
         <i class="uil uil-fire"></i>
       </a>
 
@@ -100,8 +114,8 @@
           </div>
 
           <div class="home__data">
-            <h1 class="home__title">Hi, I'm&nbsp;Margarita</h1>
-            <h3 class="home__subtitle">Junior Front-End Developer</h3>
+            <h1 class="home__title">Hi, I'm&nbsp;Marharyta</h1>
+            <h3 class="home__subtitle">Junior Frontend Developer</h3>
             <a href="#contact" class="button button--flex">
               Contact Me <i class="uil uil-message button__icon"></i>
             </a>
@@ -158,7 +172,7 @@
 
             <div>
               <h1 class="skills__title">Frontend Developer</h1>
-              <span class="skills__subtitle">3 month</span>
+              <span class="skills__subtitle">9 month</span>
             </div>
 
             <i class="uil uil-angle-down skills__arrow"></i>
@@ -167,31 +181,43 @@
           <div class="skills__list grid">
             <div class="skills__data">
               <div class="skills__titles">
-                <h3 class="skills__name">HTML5/CSS3/JS</h3>
+                <h3 class="skills__name">HTML/CSS, JS(ES6+), responsive design</h3>
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <h3 class="skills__name">Figma, PSD, Sketch to Html</h3>
+                <h3 class="skills__name">React(hooks, classes), Redux</h3>
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <h3 class="skills__name">Responsive Web Designing</h3>
+                <h3 class="skills__name">HTTP, OOP</h3>
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <h3 class="skills__name">React JS</h3>
+                <h3 class="skills__name">Git, git-flow, npm, yarn</h3>
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <h3 class="skills__name">Git</h3>
+                <h3 class="skills__name">AdobePhotoshop, Figma</h3>
+              </div>
+            </div>
+
+            <div class="skills__data">
+              <div class="skills__titles">
+                <h3 class="skills__name">SCRUM, Jira/Confluence</h3>
+              </div>
+            </div>
+
+            <div class="skills__data">
+              <div class="skills__titles">
+                <h3 class="skills__name">VSCode</h3>
               </div>
             </div>
           </div>
@@ -407,26 +433,26 @@
 
               <div>
                 <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
+                <!-- <span class="qualification__line"></span> -->
               </div>
             </div>
             <!-- ====================== content 3 ========================== -->
-            <div class="qualification__data">
+            <!-- <div class="qualification__data">
               <div></div>
 
               <div>
                 <span class="qualification__rounder"></span>
-                <!-- <span class="qualification__line"></span> -->
-              </div>
+                <span class="qualification__line"></span>
+              </div> -->
 
-              <div>
+              <!-- <div>
                 <h3 class="qualification__title">HTML coder</h3>
                 <span class="qualification__subtitle">Softum</span>
                 <div class="qualification__calendar">
                   <i class="uil uil-calendar-alt"></i>
                   9/2022 - ...
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -672,8 +698,29 @@
               </a>
             </div>
           </div>
-          <!--==================== PORTFOLIO 4 ====================-->
+          <!--==================== PORTFOLIO 3.5 ====================-->
           <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/portfolio6.jpg" alt="" class="portfolio__img" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Landing Page</h3>
+              <p class="portfolio__description">
+                HTML5/CSS3 adaptable page
+              </p>
+              <a href="https://polkan37.github.io/leather-crafties/" target="_blank"
+                class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+              <a href="https://github.com/Polkan37/leather-crafties/" target="_blank"
+                class="button button--flex button--small portfolio__button">
+                Github&nbsp;<i class="uil uil-github"></i>
+                <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+            </div>
+          </div>
+          <!--==================== PORTFOLIO 4 ====================-->
+          <!-- <div class="portfolio__content grid swiper-slide">
             <img src="assets/img/portfolio4.jpg" alt="" class="portfolio__img" />
 
             <div class="portfolio__data">
@@ -692,7 +739,7 @@
                 <i class="uil uil-arrow-right button__icon"></i>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- Arrows -->
         <div class="swiper-button-next">
@@ -718,8 +765,8 @@
               <h3 class="contact__title">Send a message</h3>
               <a href="https://t.me/polkan37" target="_blanck" title="telegram"><i
                   class="uil uil-telegram contact__messsnger_icon"></i></a>
-              <a href="https://wa.me/31627888171" target="_blanck" title="WhatsApp"><i
-                  class="uil uil-whatsapp contact__messsnger_icon"></i></a>
+              <a href="https://join.skype.com/invite/CjIcgsXc9yzl" target="_blanck" title="Skype"><i
+                  class="uil uil-skype contact__messsnger_icon"></i></a>
               <a href="http://m.me/Dazee2587413699" target="_blanck" title="Messenger"><i
                   class="uil uil-facebook-messenger contact__messsnger_icon"></i></a>
             </div>
@@ -765,7 +812,6 @@
     <div class="footer__bg">
       <div class="footer__container container grid">
         <div>
-          <h1 class="footer__title"><i class="uil uil-fire"></i></h1>
         </div>
 
         <ul class="footer__links">
