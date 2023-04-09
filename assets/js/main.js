@@ -222,7 +222,7 @@ function inputCheck(el) {
     let isValid = isAllValid.reduce((acc, current) => {
       return acc & current;
     });
-    if(isValid) button.classList.remove("invalid-input");
+    if (isValid) button.classList.remove("invalid-input");
   } else {
     el.style.border = "1px solid rgb(255, 0, 0)";
     el.setAttribute("is-valid", "0");
@@ -282,3 +282,26 @@ function buttonHandler(e) {
     });
   }
 }
+
+/*==================== DURATION OF WORK ====================*/
+
+const startInDev = new Date('2022-03-01')
+const startInMailing = new Date('2018-01-01')
+const devContainer = document.getElementById('dev-duration')
+const mailingContainer = document.getElementById('email-duration');
+const inDev = getDurationInYM(startInDev)
+const inMailing = getDurationInYM(startInMailing)
+
+function getDurationInYM(startDate) {
+  const today = new Date(),
+    years = Math.floor((today - startDate)/(1000 * 3600 * 24 * 365)),
+    months = (today.getMonth() - startDate.getMonth()) >= 0 ? (today.getMonth() - startDate.getMonth()) : (12 - startDate.getMonth() + today.getMonth()); 
+
+  return {
+    'years': years,
+    'months': months
+  }
+}
+
+devContainer.innerText = (inDev.years !== 0 ? inDev.years + ' years ' : '') + (inDev.months !== 0 ? inDev.months + ' months ' : '')
+mailingContainer.innerText = (inMailing.years !== 0 ? inMailing.years + ' years ' : '') + (inMailing.months !== 0 ? inMailing.months + ' months ' : '')
