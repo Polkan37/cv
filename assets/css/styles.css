@@ -144,6 +144,9 @@ img {
   font-size: var(--h1-font-size);
   color: var(--title-color);
 }
+.skills .section__title {
+  margin-bottom: var(--mb-2);
+}
 
 .section__subtitle {
   display: block;
@@ -402,18 +405,24 @@ img {
   align-items: center;
 }
 .skills__container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 .skills__content {
   display: inline-block;
   vertical-align: top;
-  max-width: 320px;
-  width: 300px;
+  max-width: 450px;
+  width: 400px;
 }
 .skills__header {
   display: flex;
   align-items: center;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: var(--mb-0-5);
   cursor: pointer;
 }
 .skills__icon,
@@ -813,6 +822,10 @@ cert-icon {
   .container {
     margin-right: auto;
     margin-left: auto;
+  }
+  .skills__container {
+    flex-direction: row;
+    align-items: flex-start;
   }
   body {
     margin: 0;

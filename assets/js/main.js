@@ -35,12 +35,8 @@ const skillsContent = document.getElementsByClassName("skills__content"),
 function toggleSkills() {
   let itemClass = this.parentNode.className;
 
-  for (i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = "skills__content skills__close";
-  }
-  if (itemClass === "skills__content skills__close") {
-    this.parentNode.className = "skills__content skills__open";
-  }
+  this.parentNode.className = itemClass == "skills__content skills__open" ? "skills__content skills__close" : "skills__content skills__open";
+
 }
 
 skillsHeader.forEach((el) => {
@@ -303,5 +299,5 @@ function getDurationInYM(startDate) {
   }
 }
 
-devContainer.innerText = (inDev.years !== 0 ? inDev.years + ' years ' : '') + (inDev.months !== 0 ? inDev.months + ' months ' : '')
-mailingContainer.innerText = (inMailing.years !== 0 ? inMailing.years + ' years ' : '') + (inMailing.months !== 0 ? inMailing.months + ' months ' : '')
+if(devContainer) devContainer.innerText = (inDev.years !== 0 ? inDev.years + ' years ' : '') + (inDev.months !== 0 ? inDev.months + ' months ' : '')
+if(mailingContainer) mailingContainer.innerText = (inMailing.years !== 0 ? inMailing.years + ' years ' : '') + (inMailing.months !== 0 ? inMailing.months + ' months ' : '')
